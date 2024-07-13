@@ -6,6 +6,29 @@ const FULL_HEART = '♥'
 
 
 
+const likeButtons = document.querySelectorAll('.like');
+
+
+const likeCounts = {};
+
+// Add event listeners to each "Like" button
+likeButtons.forEach((button) => {
+  const postId = button.closest('.media-post').id; // Get the post ID from the parent element
+  likeCounts[postId] = 0;
+  button.addEventListener('click', () => {
+  
+    likeCounts[postId] += 1;
+
+    
+    const likeGlyph = button.querySelector('.like-glyph');
+    likeGlyph.textContent = '❤️'; 
+    button.classList.add('liked'); 
+    button.querySelector('.like-count').textContent = likeCounts[postId];
+  });
+});
+
+
+
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response

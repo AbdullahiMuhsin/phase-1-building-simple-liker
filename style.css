@@ -64,3 +64,18 @@ article.media-post > footer ul {
 .hidden {
   visibility: hidden;
 }
+
+
+.like {
+  cursor: pointer;
+}
+
+.like-glyph {
+  font-size: 0.8rem;
+
+}
+
+.liked .like-glyph {
+  color:red; 
+
+}
